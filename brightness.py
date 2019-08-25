@@ -1,3 +1,15 @@
+"""
+Reducing and increasing brightness on pictures
+
+"""
+
+
+#--------------------------Image Display------------------------------------#
+from PIL import Image
+import numpy as np
+from matplotlib import pyplot as plt
+
+#------------------------------Image-----------------------------------#
 def apply_brightness(img, brightness):
     img_o = np.array(Image.open(img))
     x=img_o.shape[0]
@@ -41,3 +53,23 @@ def apply_brightness(img, brightness):
     plt.tight_layout()
     plt.show()
     #---------------------------------------------------------------------------#
+
+if __name__ == "__main__":
+    #Clarear img 1
+    apply_brightness("clarear_1.png",50)
+    input("Press Enter to continue...")
+    #Clarear img 2
+    apply_brightness("clarear_2.png",40)
+    input("Press Enter to continue...")
+    #Clarear img 3
+    apply_brightness("clarear_3.png",60)
+    input("Press Enter to continue...")
+
+    #Escurecer img 1
+    apply_brightness("escurecer_1.png",-120)
+    input("Press Enter to continue...")
+    #Escurecer img 2
+    apply_brightness("escurecer_2.png",-100)
+    input("Press Enter to continue...")
+    #Escurecer img 3
+    apply_brightness("escurecer_3.png",-80)
