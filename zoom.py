@@ -1,3 +1,9 @@
+"""
+Zoom in and out imagens using the Nearest neighbour interpolation technique
+"""
+#--------------------------------Imports------------------------------------#
+from PIL import Image
+import numpy as np
 
 def nearest_neighbor(img, x_new, y_new):
     img_o = np.array(Image.open(img))
@@ -17,3 +23,26 @@ def nearest_neighbor(img, x_new, y_new):
     img = Image.fromarray(img_r)
     img.show()
     #---------------------------------------------------------------------------#
+
+
+if __name__ == "__main__":
+
+    #Primeira imagem zoom-in-1
+    nearest_neighbor('zoom_in_1.png',480,360)
+    input("Press Enter to continue...")
+    #Segunda imagem zoom-in-2
+    nearest_neighbor('zoom_in_2.png',1456,2597)
+    input("Press Enter to continue...")
+    #Terceira imagem zoom-in-3
+    nearest_neighbor('zoom_in_3.png',990,720)
+    input("Press Enter to continue...")
+
+
+    #Primeira imagem zoom-out-1
+    nearest_neighbor('zoom_out_1.png',120, 271)
+    input("Press Enter to continue...")
+    #Segunda imagem zoom-out-2
+    nearest_neighbor('zoom_out_2.png',500, 314)
+    input("Press Enter to continue...")
+    #Terceira imagem zoom-out-3
+    nearest_neighbor('zoom_out_3.png',500, 174)
